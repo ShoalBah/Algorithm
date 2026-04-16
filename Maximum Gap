@@ -43,15 +43,6 @@ public:
         int max_gap = 0;
         int prev_max = max_num; // Use for finding first bucket
 
-        // Find the first filled bucket's max to start comparison
-        for (int i = 0; i < buckets; i++) {
-            if (has_data[i]) {
-                prev_max = bucket_max[i];
-                // Check if this first bucket's min creates a gap with the global min
-                break;
-            }
-        }
-
         // Iteration to find gaps between non-empty buckets
         int current_prev_max = min_num; 
         for (int i = 0; i < buckets; i++) {
